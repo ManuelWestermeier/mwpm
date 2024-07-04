@@ -16,7 +16,7 @@ build it and set the executable in your path variable
 
 usable with github repos
 
-https://github.com/ManuelWestermeier/mwpm.git >> mwpm@ManuelWestermeier
+https://github.com/ManuelWestermeier/next-gen-exe-test.git >> next-gen-exe-test@ManuelWestermeier
 
 ### short
 
