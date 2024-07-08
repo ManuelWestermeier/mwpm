@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#include <windows.h>
+#include <iostream>
 #include <string>
 #include <filesystem>
 #include <fstream>
@@ -163,23 +164,25 @@ int installPackage(string command, string pathName) {
 
 int main(int argc, char** argv)
 {
-	if (argc == 1 || argc == 2)
+	string cmdPath = argv[1];
+
+	if (argc == 0 || argc == 1 || argc == 2)
 	{
 		help();
 		return 1;
 	}
 
 	if (wantToInstall(argc, argv))
-		return install(argv[3], argv[1]);
+		return install(argv[3], cmdPath);
 
 	if (wantToRemove(argc, argv))
-		return remove(argv[3], argv[1]);
+		return remove(argv[3], cmdPath);
 
 	if (wantToUpdate(argc, argv))
-		return update(argv[3], argv[1]);
+		return update(argv[3], cmdPath);
 
 	if (wantToPackage(argc, argv))
-		return installPackage(argv[3], argv[1]);
+		return installPackage(argv[3], cmdPath);
 	
 	help();
 	return 1;
